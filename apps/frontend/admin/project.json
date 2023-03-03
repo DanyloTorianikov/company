@@ -1,25 +1,25 @@
 {
-  "name": "frontend-crm",
+  "name": "frontend-admin",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/frontend/crm/src",
+  "sourceRoot": "apps/frontend/admin/src",
   "prefix": "company",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/frontend/crm",
-        "index": "apps/frontend/crm/src/index.html",
-        "main": "apps/frontend/crm/src/main.ts",
+        "outputPath": "dist/apps/frontend/admin",
+        "index": "apps/frontend/admin/src/index.html",
+        "main": "apps/frontend/admin/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/frontend/crm/tsconfig.app.json",
+        "tsConfig": "apps/frontend/admin/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/frontend/crm/src/favicon.ico",
-          "apps/frontend/crm/src/assets"
+          "apps/frontend/admin/src/favicon.ico",
+          "apps/frontend/admin/src/assets"
         ],
-        "styles": ["apps/frontend/crm/src/styles.scss"],
+        "styles": ["apps/frontend/admin/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -52,14 +52,14 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "port": 4200
+        "port": 4201
       },
       "configurations": {
         "production": {
-          "browserTarget": "frontend-crm:build:production"
+          "browserTarget": "frontend-admin:build:production"
         },
         "development": {
-          "browserTarget": "frontend-crm:build:development"
+          "browserTarget": "frontend-admin:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,7 +67,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "frontend-crm:build"
+        "browserTarget": "frontend-admin:build"
       }
     },
     "lint": {
@@ -75,8 +75,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/frontend/crm/**/*.ts",
-          "apps/frontend/crm/**/*.html"
+          "apps/frontend/admin/**/*.ts",
+          "apps/frontend/admin/**/*.html"
         ]
       }
     },
@@ -84,7 +84,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/frontend/crm/jest.config.ts",
+        "jestConfig": "apps/frontend/admin/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -95,5 +95,5 @@
       }
     }
   },
-  "tags": ["scope:frontend-crm"]
+  "tags": ["scope:frontend-admin"]
 }
