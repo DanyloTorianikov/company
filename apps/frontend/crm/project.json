@@ -99,8 +99,5 @@
       }
     }
   },
-  "tags": [
-    "scope:frontend-crm",
-    "type:app"
-  ]
+  "tags": ["scope:frontend-crm", "type:app"]
 }
