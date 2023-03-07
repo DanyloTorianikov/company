@@ -19,7 +19,10 @@
           "apps/frontend/crm/src/favicon.ico",
           "apps/frontend/crm/src/assets"
         ],
-        "styles": ["apps/frontend/crm/src/styles.scss"],
+        "styles": ["apps/frontend/crm/src/styles/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps/frontend/crm/src/styles"]
+        },
         "scripts": []
       },
       "configurations": {
