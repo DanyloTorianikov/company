@@ -5,6 +5,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AppController } from './app.controller';
 import { environment } from '../environments/environment';
 import { AppResolver } from './app.resolver';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { AppResolver } from './app.resolver';
       typePaths: ["./**/*.graphql"],
       context: ({ req }) => ({ req }),
       playground: true
-    })
+    }),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppResolver]
