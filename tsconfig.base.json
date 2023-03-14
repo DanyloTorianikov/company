@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@company/shared/date-access/interfaces": [
+        "libs/shared/date-access/interfaces/src/index.ts"
+      ],
       "@company/ui-component": ["libs/ui-component/src/index.ts"]
     }
   },
