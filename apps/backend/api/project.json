@@ -4,6 +4,20 @@
   "sourceRoot": "apps/backend/api/src",
   "projectType": "application",
   "targets": {
+    "compodoc": {
+      "builder": "@nrwl/workspace:run-commands",
+      "dependsOn": [{
+        "target": "build",
+        "projects": "dependencies"
+      }],
+      "options": {
+        "commands": [
+          {
+            "command": "mkdir docs-temp && cp README.md ./docs-temp && cp ./apps/backend/api/docs/README.md ./ && npx compodoc -p apps/backend/api/tsconfig.app.json --theme vagrant -r 8085 -d docs/api/ && rm README.md && cp ./docs-temp/README.md ./ && rm ./docs-temp/README.md && rmdir ./docs-temp"
+          }
+        ]
+      }
+    },
     "build": {
       "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],

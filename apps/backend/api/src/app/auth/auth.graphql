@@ -1,8 +1,20 @@
 extend type Query {
-  login(username: String!, password: String!): SingInResponse
+  "request token and login credentials"
+  login(
+    "authentication: username as login"
+    username: String!
+    "authentication: password"
+    password: String!
+  ): SingInResponse
   logout: Boolean
 }
 
+"""
+ToDO
+Demo
+multi-line
+comment
+"""
 type SingInResponse {
   accessToken: String
   expiresIn: Int
